@@ -5,5 +5,7 @@ module.exports = function (app) {
   });
   app.post("/api/friends", function (req, res) {
     // Insert math shananigans
+    friends.push(req.body);
+    res.json(true);
   });
 };
