@@ -243,9 +243,20 @@
       answer8: $("#inputGroupSelect08").val().trim(),
       answer9: $("#inputGroupSelect09").val().trim(),
       answer10: $("#inputGroupSelect010").val().trim(),
+      total:
+        parseInt($("#inputGroupSelect01").val().trim()) +
+        parseInt($("#inputGroupSelect02").val().trim()) +
+        parseInt($("#inputGroupSelect03").val().trim()) +
+        parseInt($("#inputGroupSelect04").val().trim()) +
+        parseInt($("#inputGroupSelect05").val().trim()) +
+        parseInt($("#inputGroupSelect06").val().trim()) +
+        parseInt($("#inputGroupSelect07").val().trim()) +
+        parseInt($("#inputGroupSelect08").val().trim()) +
+        parseInt($("#inputGroupSelect09").val().trim()) +
+        parseInt($("#inputGroupSelect010").val().trim()),
     };
 
-    console.log(newFriend);
+    console.log(newFriend.total);
 
     $.post("/api/friends", newFriend, function (data) {
       if (data) {
