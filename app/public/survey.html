@@ -257,12 +257,22 @@
     };
 
     console.log(newFriend.total);
-
+    var total =
+      parseInt($("#inputGroupSelect01").val().trim()) +
+      parseInt($("#inputGroupSelect02").val().trim()) +
+      parseInt($("#inputGroupSelect03").val().trim()) +
+      parseInt($("#inputGroupSelect04").val().trim()) +
+      parseInt($("#inputGroupSelect05").val().trim()) +
+      parseInt($("#inputGroupSelect06").val().trim()) +
+      parseInt($("#inputGroupSelect07").val().trim()) +
+      parseInt($("#inputGroupSelect08").val().trim()) +
+      parseInt($("#inputGroupSelect09").val().trim()) +
+      parseInt($("#inputGroupSelect010").val().trim());
     $.post("/api/friends", newFriend, function (data) {
-      if (data) {
-        alert("Yay!");
+      if (total > 30) {
+        alert("Friend Suggestion: Ahmed");
       } else {
-        alert("Sorry");
+        alert("Friend Suggestion: Tom");
       }
     });
   });
